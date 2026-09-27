@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Santosh Kumar Maurya — Real Estate & Legal Consultancy">
+<title>Santosh Kumar Maurya | Real Estate & Legal Consultancy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1420;--navy2:#111f2e;--gold:#c9a45c;--gold2:#e3c98f;--cream:#f7f3eb;--white:#fff;--muted:#aeb8c4;--line:rgba(255,255,255,.12)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,Arial,sans-serif;background:var(--cream);color:#18222d;line-height:1.6}.container{width:min(1180px,92%);margin:auto}
+nav{position:absolute;z-index:10;top:0;left:0;width:100%;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.nav{display:flex;align-items:center;justify-content:space-between}.brand{color:white;text-decoration:none;display:flex;gap:13px;align-items:center}.crest{width:43px;height:43px;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold);font-family:Georgia;font-size:20px}.brand strong{font-family:"Cormorant Garamond";font-size:25px;letter-spacing:.5px}.brand small{display:block;color:#cbd2d9;font-size:9px;letter-spacing:2px;text-transform:uppercase}.links{display:flex;gap:30px}.links a{color:#eee;text-decoration:none;font-size:13px}.links a:hover{color:var(--gold2)}.nav-cta{border:1px solid var(--gold);padding:10px 17px;color:var(--gold2)!important}
+.hero{min-height:760px;background:linear-gradient(90deg,rgba(5,12,19,.88),rgba(5,12,19,.48)),url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85") center/cover;display:flex;align-items:center;color:#fff}.hero-content{max-width:720px;padding-top:70px}.eyebrow{color:var(--gold2);text-transform:uppercase;letter-spacing:4px;font-size:11px;font-weight:600;margin-bottom:20px}.hero h1{font:600 clamp(52px,7vw,88px)/.9 "Cormorant Garamond",serif;margin-bottom:28px}.hero h1 span{color:var(--gold2)}.hero p{max-width:590px;color:#d8dde2;font-size:16px;margin-bottom:35px}.buttons{display:flex;gap:14px;flex-wrap:wrap}.btn{display:inline-block;text-decoration:none;padding:14px 23px;font-weight:600;font-size:13px;letter-spacing:.4px}.gold{background:var(--gold);color:#111}.outline{border:1px solid rgba(255,255,255,.5);color:#fff}.gold:hover{background:var(--gold2)}.outline:hover{border-color:var(--gold);color:var(--gold2)}
+.stats{margin-top:-55px;position:relative}.stats-box{background:#fff;box-shadow:0 18px 50px #07111d22;display:grid;grid-template-columns:repeat(3,1fr)}.stat{padding:28px;text-align:center;border-right:1px solid #ddd}.stat:last-child{border:0}.stat b{font:700 34px "Cormorant Garamond";color:var(--navy)}.stat span{display:block;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#7a828a}
+section{padding:100px 0}.section-head{max-width:690px;margin-bottom:45px}.section-head .eyebrow{color:#987536}.section-head h2{font:600 55px/.95 "Cormorant Garamond";color:var(--navy);margin:10px 0 18px}.section-head p{color:#65717d}
+.properties{background:#f1eee7}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.property{background:white;box-shadow:0 12px 35px #0b142014;transition:.3s}.property:hover{transform:translateY(-6px)}.photo{height:260px;position:relative;background-size:cover;background-position:center}.tag{position:absolute;top:17px;left:17px;background:var(--gold);padding:7px 11px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px}.property-body{padding:23px}.property h3{font:600 29px "Cormorant Garamond";color:var(--navy)}.location{font-size:12px;color:#78828c;margin:4px 0 17px}.details{display:flex;gap:18px;color:#6c747c;font-size:12px;border-bottom:1px solid #eee;padding-bottom:17px}.price{display:flex;justify-content:space-between;align-items:center;margin-top:17px}.price strong{font:700 25px "Cormorant Garamond";color:var(--navy)}.price a{color:#947338;text-decoration:none;font-size:12px;font-weight:700}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.dark{background:var(--navy);color:white}.dark h2{color:white}.dark p{color:#b8c1ca}.feature-list{display:grid;gap:20px}.feature{display:flex;gap:18px}.icon{min-width:44px;height:44px;border:1px solid #a9864b;color:var(--gold2);display:grid;place-items:center}.feature h3{font-size:15px;margin-bottom:4px}.feature p{font-size:13px;color:#aeb8c4}.law-image{height:510px;background:linear-gradient(90deg,#0b142033,#0b142033),url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1000&q=85") center/cover}
+.contact{background:#e9e4da}.contact-box{background:var(--navy);color:#fff;padding:55px;display:flex;justify-content:space-between;gap:30px;align-items:center}.contact-box h2{font:600 48px "Cormorant Garamond"}.contact-box p{color:#b8c1ca;max-width:600px;margin-top:8px}.contact-actions{display:flex;gap:12px;flex-wrap:wrap}
+footer{background:#07101a;color:#8f9ba6;padding:28px 0;font-size:12px}.foot{display:flex;justify-content:space-between;gap:20px}.gold-text{color:var(--gold2)}
+.wa{position:fixed;right:22px;bottom:22px;width:57px;height:57px;border-radius:50%;background:#25d366;color:white;display:grid;place-items:center;text-decoration:none;font-size:25px;box-shadow:0 8px 30px #0005;z-index:20}
+@media(max-width:800px){.links{display:none}.hero{min-height:680px}.hero h1{font-size:58px}.stats-box{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid #ddd}.grid,.split{grid-template-columns:1fr}.law-image{height:350px}.contact-box{padding:35px 25px;display:block}.contact-actions{margin-top:25px}.section-head h2{font-size:45px}.foot{display:block}.foot div+div{margin-top:8px}}
+</style>
+</head>
+<body>
+<nav><div class="container nav">
+<a class="brand" href="#"><span class="crest">S</span><span><strong>Santosh Kumar Maurya</strong><small>Advocate • Real Estate Consultancy</small></span></a>
+<div class="links"><a href="#properties">Properties</a><a href="#legal">Legal Consultancy</a><a href="#about">About</a><a class="nav-cta" href="#contact">Consultation</a></div>
+</div></nav>
+
+<header class="hero">
+<div class="container hero-content">
+<div class="eyebrow">Property • Legal • Trust</div>
+<h1>Where <span>Property</span><br>Meets Confidence.</h1>
+<p>Professional real-estate and legal consultancy for clients seeking property opportunities, documentation guidance and straightforward personal assistance.</p>
+<div class="buttons"><a class="btn gold" href="#properties">Explore Properties</a><a class="btn outline" href="#contact">Speak With Santosh</a></div>
+</div>
+</header>
+
+<div class="stats"><div class="container stats-box">
+<div class="stat"><b>01</b><span>Personal Consultation</span></div>
+<div class="stat"><b>02</b><span>Property Assistance</span></div>
+<div class="stat"><b>03</b><span>Legal Guidance</span></div>
+</div></div>
+
+<section id="properties" class="properties"><div class="container">
+<div class="section-head"><div class="eyebrow">Selected Listings</div><h2>Featured Properties</h2><p>Browse selected property opportunities and contact Santosh directly for current details, availability and consultation.</p></div>
+<div class="grid">
+<article class="property"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85')"><span class="tag">Featured</span></div><div class="property-body"><h3>Elegant Family Residence</h3><div class="location">Prime Residential Location</div><div class="details"><span>4 Beds</span><span>3 Baths</span><span>2,400 sq ft</span></div><div class="price"><strong>₹ On Request</strong><a href="https://wa.me/919415952120?text=Hello%20Santosh%20Kumar%20Maurya%2C%20I%20am%20interested%20in%20the%20Elegant%20Family%20Residence.">ENQUIRE →</a></div></div></article>
+<article class="property"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85')"><span class="tag">Premium</span></div><div class="property-body"><h3>Contemporary Urban Home</h3><div class="location">Well-Connected Residential Area</div><div class="details"><span>3 Beds</span><span>2 Baths</span><span>1,850 sq ft</span></div><div class="price"><strong>₹ On Request</strong><a href="https://wa.me/919415952120?text=Hello%20Santosh%20Kumar%20Maurya%2C%20I%20am%20interested%20in%20the%20Contemporary%20Urban%20Home.">ENQUIRE →</a></div></div></article>
+<article class="property"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85')"><span class="tag">Opportunity</span></div><div class="property-body"><h3>Residential Plot</h3><div class="location">Developing Locality</div><div class="details"><span>Plot</span><span>Road Access</span><span>Clear Details</span></div><div class="price"><strong>₹ On Request</strong><a href="https://wa.me/919415952120?text=Hello%20Santosh%20Kumar%20Maurya%2C%20I%20am%20interested%20in%20the%20Residential%20Plot.">ENQUIRE →</a></div></div></article>
+</div></div></section>
+
+<section id="legal" class="dark"><div class="container split"><div class="law-image"></div><div>
+<div class="eyebrow">Legal Consultancy</div><h2 class="section-head" style="margin-bottom:25px">Property decisions deserve legal clarity.</h2>
+<p style="margin-bottom:30px">Alongside real-estate assistance, Santosh provides professional legal and property-related consultation so clients can approach important decisions with better understanding.</p>
+<div class="feature-list">
+<div class="feature"><div class="icon">01</div><div><h3>Property Documentation</h3><p>Guidance around documents and property-related paperwork.</p></div></div>
+<div class="feature"><div class="icon">02</div><div><h3>Property Consultation</h3><p>Discuss a property, transaction or requirement directly.</p></div></div>
+<div class="feature"><div class="icon">03</div><div><h3>Personal Assistance</h3><p>A direct communication channel for clients and enquiries.</p></div></div>
+</div></div></div></section>
+
+<section id="about"><div class="container split"><div>
+<div class="eyebrow" style="color:#987536">The Consultant</div><h2 class="section-head" style="margin-bottom:20px">Santosh Kumar Maurya</h2>
+<p>Advocate and real-estate consultant focused on practical property assistance and direct client communication.</p>
+<p style="margin-top:18px;color:#68737e">Whether you are exploring a property, seeking guidance about documentation, or simply want to discuss your requirement, you can connect directly.</p>
+</div><div style="background:var(--navy);padding:48px;color:white"><div class="eyebrow">A simpler way to connect</div><h3 style="font:600 39px 'Cormorant Garamond';margin-bottom:15px">One conversation can clarify the next step.</h3><p style="color:#b8c1ca">No complicated forms. Tell us what you are looking for and receive direct assistance.</p></div></div></section>
+
+<section id="contact" class="contact"><div class="container"><div class="contact-box">
+<div><div class="eyebrow">Private Consultation</div><h2>Let's discuss your requirement.</h2><p>For property enquiries, real-estate assistance or legal consultation, contact Santosh directly.</p></div>
+<div class="contact-actions"><a class="btn gold" href="https://wa.me/919415952120?text=Hello%20Santosh%20Kumar%20Maurya%2C%20I%20would%20like%20to%20discuss%20a%20property%20or%20legal%20consultation.">WhatsApp Consultation</a><a class="btn outline" style="border-color:#75808a" href="tel:+919415952120">Call Directly</a></div>
+</div></div></section>
+
+<footer><div class="container foot"><div>© 2026 <span class="gold-text">Santosh Kumar Maurya</span>. All rights reserved.</div><div>Advocate • Real Estate & Legal Consultancy</div></div></footer>
+<a class="wa" aria-label="WhatsApp" href="https://wa.me/919415952120?text=Hello%20Santosh%20Kumar%20Maurya%2C%20I%20would%20like%20to%20make%20an%20enquiry.">◉</a>
+</body>
+</html>
