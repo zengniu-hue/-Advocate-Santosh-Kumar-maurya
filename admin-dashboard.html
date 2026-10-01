@@ -182,12 +182,26 @@ document.getElementById("save-btn").addEventListener("click", async function(){
 
   message.textContent = "Saving...";
 
-  const { error } = await supabaseClient
-    .from("Shubh Vichar")
-    .insert([
-      { Content: content }
-    ]);
+  
+const { data, error } = await supabaseClient
+  .from("Shubh Vichar")
+  .select("id")
+  .order("id", { ascending: false })
+  .limit(1)
+  .single();
 
+if (!error && data) {
+  const { error: updateError } = await supabaseClient
+    .from("Shubh Vichar")
+    .update({ Content: content })
+    .eq("id", data.id);
+
+  if (updateError) {
+    console.error(updateError);
+    message.textContent = "Error: " + updateError.message;
+    return;
+  }
+}
   if(error){
     console.error(error);
     message.textContent = "Error: " + error.message;
