@@ -172,6 +172,11 @@ const supabaseClient = supabase.createClient(
   SUPABASE_URL,
   SUPABASE_KEY
 );
+  supabaseClient.auth.getSession().then(({ data }) => {
+  if (!data.session) {
+    window.location.href = "Admin.html";
+  }
+});
 </script>
   <script>
     async function loadShubhVichar() {
