@@ -196,5 +196,25 @@ async function loadProperties() {
 
 loadProperties();
 </script>
+
+<script>
+const taglines = [
+  'Where <span>Property</span><br>Meets Confidence.',
+  'Your <span>Property</span><br>Our Commitment.',
+  'Trusted <span>Real Estate</span><br>Clear Guidance.',
+  'Property Decisions.<br><span>Made Simple.</span>',
+  'Find the Right <span>Property.</span><br>With the Right Guidance.'
+];
+
+let taglineIndex = 0;
+
+setInterval(() => {
+  taglineIndex = (taglineIndex + 1) % taglines.length;
+  document.getElementById("hero-tagline").innerHTML = taglines[taglineIndex];
+}, 4000);
+</script>
+
+</body>
+  
 </body>
 </html>
