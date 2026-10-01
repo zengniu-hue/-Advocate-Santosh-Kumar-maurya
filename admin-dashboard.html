@@ -151,6 +151,25 @@ const supabaseClient = supabase.createClient(
 );
 </script>
   <script>
+    async function loadShubhVichar() {
+  const { data, error } = await supabaseClient
+    .from("Shubh Vichar")
+    .select("Content")
+    .order("id", { ascending: false })
+    .limit(1)
+    .single();
+
+  if (error) {
+    console.error(error);
+    return;
+  }
+
+  if (data) {
+    document.getElementById("shubh-vichar").value = data.Content;
+  }
+}
+
+loadShubhVichar();
 document.getElementById("save-btn").addEventListener("click", async function(){
 
   const content = document.getElementById("shubh-vichar").value.trim();
