@@ -88,7 +88,7 @@ const supabaseClient = supabase.createClient(
 
 async function loadProperties() {
   const { data, error } = await supabaseClient
-    .from("properties")
+    .from("Properties")
     .select("*");
 
   if (error) {
