@@ -171,6 +171,10 @@ const supabaseClient = supabase.createClient(
 }
 
 loadShubhVichar();
+    document.getElementById("logout-btn").addEventListener("click", async function(){
+  await supabaseClient.auth.signOut();
+  window.location.href = "Admin.html";
+});
 document.getElementById("save-btn").addEventListener("click", async function(){
 
   const content = document.getElementById("shubh-vichar").value.trim();
