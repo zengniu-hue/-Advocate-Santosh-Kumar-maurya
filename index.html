@@ -214,12 +214,22 @@ const taglines = [
 let taglineIndex = 0;
 
 setInterval(() => {
-  taglineIndex = (taglineIndex + 1) % taglines.length;
-  document.getElementById("hero-tagline").innerHTML = taglines[taglineIndex];
+  const tagline = document.getElementById("hero-tagline");
+
+  tagline.style.opacity = "0";
+  tagline.style.transform = "translateY(10px)";
+
+  setTimeout(() => {
+    taglineIndex = (taglineIndex + 1) % taglines.length;
+    tagline.innerHTML = taglines[taglineIndex];
+
+    tagline.style.opacity = "1";
+    tagline.style.transform = "translateY(0)";
+  }, 600);
+
 }, 4000);
 </script>
 
-</body>
   
 </body>
 </html>
