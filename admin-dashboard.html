@@ -150,6 +150,42 @@ const supabaseClient = supabase.createClient(
   SUPABASE_KEY
 );
 </script>
-</body>
+  <script>
+document.getElementById("save-btn").addEventListener("click", async function(){
+
+  const content = document.getElementById("shubh-vichar").value.trim();
+  const message = document.getElementById("message");
+
+  if(!content){
+    message.textContent = "Please write a Shubh Vichar first.";
+    return;
+  }
+
+  message.textContent = "Saving...";
+
+  const { error } = await supabaseClient
+    .from("Shubh Vichar")
+    .insert([
+      { content: content }
+    ]);
+
+  if(error){
+    console.error(error);
+    message.textContent = "Error: " + error.message;
+    return;
+  }
+
+  message.textContent = "Shubh Vichar saved successfully!";
+  document.getElementById("shubh-vichar").value = "";
+
+});
+  </script>
   
+
+<script>
+document.getElementById("save-btn")...
+</script>
+
+</body>
 </html>
+  
