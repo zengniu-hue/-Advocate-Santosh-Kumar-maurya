@@ -75,5 +75,31 @@ footer{background:#07101a;color:#8f9ba6;padding:28px 0;font-size:12px}.foot{disp
 
 <footer><div class="container foot"><div>© 2026 <span class="gold-text">Santosh Kumar Maurya</span>. All rights reserved.</div><div>Advocate • Real Estate & Legal Consultancy</div></div></footer>
 <a class="wa" aria-label="WhatsApp" href="https://wa.me/919415952120?text=Hello%20Santosh%20Kumar%20Maurya%2C%20I%20would%20like%20to%20make%20an%20enquiry.">◉</a>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "https://sbwgzaevcgcdcqycsuhh.supabase.co";
+const SUPABASE_KEY "sb_publishable_RmV8sz1RQjrN3jv1pq04Ig_1OfTGkZ5";
+
+const supabaseClient = supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+async function loadProperties() {
+  const { data, error } = await supabaseClient
+    .from("properties")
+    .select("*");
+
+  if (error) {
+    console.error("Supabase error:", error);
+    return;
+  }
+
+  console.log("Properties:", data);
+}
+
+loadProperties();
+</script>
 </body>
 </html>
