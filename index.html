@@ -120,6 +120,17 @@ async function loadProperties() {
               <span>${property["Bathrooms"] || 0} Baths</span>
               <span>${property["Area"] || ""}</span>
             </div>
+            <div class="property-description">
+  ${property["Description"] || ""}
+</div>
+
+<div class="property-facilities">
+  ${property["Facilities"] || ""}
+</div>
+
+<div class="property-road">
+  ${property["Distance from main road"] || ""}
+</div>
 
             <div class="price">
               <strong>${property["Price"] || "₹ On Request"}</strong>
