@@ -353,6 +353,27 @@ async function loadProperties() {
 }
 
 loadProperties();
+  loadProperties();
+
+async function loadShubhVichar() {
+  const { data, error } = await supabaseClient
+    .from("Shubh Vichar")
+    .select("Content")
+    .order("id", { ascending: false })
+    .limit(1)
+    .single();
+
+  if (error) {
+    console.error("Shubh Vichar error:", error);
+    return;
+  }
+
+  if (data) {
+    document.getElementById("shubh-text").textContent = data.Content;
+  }
+}
+
+loadShubhVichar();
 </script>
 
 <script>
