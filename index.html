@@ -251,21 +251,83 @@ const taglines = [
 
 let taglineIndex = 0;
 
-setInterval(() => {
+function animateTagline(html) {
   const tagline = document.getElementById("hero-tagline");
 
-  tagline.style.opacity = "0";
-  tagline.style.transform = "translateY(10px)";
+  tagline.innerHTML = "";
+
+  const temp = document.createElement("div");
+  temp.innerHTML = html;
+
+  let chars = [];
+
+  temp.childNodes.forEach(node => {
+
+    if (node.nodeType === Node.TEXT_NODE) {
+
+      [...node.textContent].forEach(char => {
+        const span = document.createElement("span");
+        span.className = "tag-char";
+        span.textContent = char === " " ? "\u00A0" : char;
+
+        span.style.setProperty("--x", `${(Math.random() - .5) * 180}px`);
+        span.style.setProperty("--y", `${(Math.random() - .5) * 140}px`);
+        span.style.setProperty("--r", `${(Math.random() - .5) * 90}deg`);
+
+        span.style.animationDelay = `${chars.length * 0.045}s`;
+
+        tagline.appendChild(span);
+        chars.push(span);
+      });
+
+    } else if (node.tagName === "SPAN") {
+
+      [...node.textContent].forEach(char => {
+        const span = document.createElement("span");
+        span.className = "tag-char";
+        span.textContent = char;
+
+        span.style.color = "var(--gold2)";
+        span.style.setProperty("--x", `${(Math.random() - .5) * 180}px`);
+        span.style.setProperty("--y", `${(Math.random() - .5) * 140}px`);
+        span.style.setProperty("--r", `${(Math.random() - .5) * 90}deg`);
+
+        span.style.animationDelay = `${chars.length * 0.045}s`;
+
+        tagline.appendChild(span);
+        chars.push(span);
+      });
+
+    } else if (node.tagName === "BR") {
+
+      tagline.appendChild(document.createElement("br"));
+    }
+  });
 
   setTimeout(() => {
+
+    chars.forEach((char, index) => {
+
+      char.classList.add("go-away");
+
+      char.style.setProperty("--out-x", `${(Math.random() - .5) * 180}px`);
+      char.style.setProperty("--out-y", `${(Math.random() - .5) * 120}px`);
+      char.style.setProperty("--out-r", `${(Math.random() - .5) * 100}deg`);
+
+      char.style.animationDelay = `${index * 0.025}s`;
+    });
+
+  }, 6000);
+
+  setTimeout(() => {
+
     taglineIndex = (taglineIndex + 1) % taglines.length;
-    tagline.innerHTML = taglines[taglineIndex];
+    animateTagline(taglines[taglineIndex]);
 
-    tagline.style.opacity = "1";
-    tagline.style.transform = "translateY(0)";
-  }, 600);
+  }, 6900);
+}
 
-}, 4000);
+animateTagline(taglines[0]);
 </script>
 
   
