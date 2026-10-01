@@ -92,6 +92,7 @@ async function loadProperties() {
     .select("*");
 
   if (error) {
+    alert("Supabase Error: " + error.message);
     console.error("Supabase error:", error);
     return;
   }
