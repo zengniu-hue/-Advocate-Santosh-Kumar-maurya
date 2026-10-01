@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Santosh Kumar Maurya</title>
+
+  <style>
+    :root{
+      --navy:#0b1420;
+      --gold:#c9a45c;
+      --cream:#f7f3eb;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      font-family:Arial,sans-serif;
+      background:var(--cream);
+      color:#18222d;
+    }
+
+    header{
+      background:var(--navy);
+      color:white;
+      padding:28px 20px;
+      text-align:center;
+    }
+
+    header h1{
+      font-family:Georgia,serif;
+      font-size:28px;
+    }
+
+    header p{
+      color:var(--gold);
+      margin-top:6px;
+      font-size:13px;
+    }
+
+    main{
+      width:min(700px,92%);
+      margin:45px auto;
+    }
+
+    .card{
+      background:white;
+      padding:30px;
+      border-radius:8px;
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
+    }
+
+    h2{
+      font-family:Georgia,serif;
+      color:var(--navy);
+      margin-bottom:8px;
+    }
+
+    .intro{
+      color:#68727c;
+      font-size:14px;
+      margin-bottom:25px;
+    }
+
+    label{
+      display:block;
+      font-size:12px;
+      font-weight:bold;
+      color:#59636d;
+      margin-bottom:8px;
+    }
+
+    textarea{
+      width:100%;
+      min-height:130px;
+      padding:14px;
+      border:1px solid #ddd;
+      border-radius:5px;
+      resize:vertical;
+      font-size:15px;
+      font-family:Arial,sans-serif;
+    }
+
+    button{
+      width:100%;
+      margin-top:18px;
+      padding:14px;
+      border:0;
+      border-radius:5px;
+      background:var(--gold);
+      color:white;
+      font-weight:bold;
+      cursor:pointer;
+    }
+
+    #message{
+      margin-top:15px;
+      text-align:center;
+      font-size:13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Santosh Kumar Maurya</h1>
+    <p>Private Admin Dashboard</p>
+  </header>
+
+  <main>
+
+    <div class="card">
+
+      <h2>शुभ विचार</h2>
+
+      <p class="intro">
+        यहाँ से वेबसाइट पर दिखाई देने वाला शुभ विचार बदला जा सकेगा।
+      </p>
+
+      <label for="shubh-vichar">
+        अपना शुभ विचार लिखें
+      </label>
+
+      <textarea
+        id="shubh-vichar"
+        placeholder="यहाँ अपना शुभ विचार लिखें..."
+      ></textarea>
+
+      <button type="button" id="save-btn">
+        SAVE SHUBH VICHAR
+      </button>
+
+      <div id="message"></div>
+
+    </div>
+
+  </main>
+
+</body>
+</html>
