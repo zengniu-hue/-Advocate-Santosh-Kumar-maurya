@@ -166,7 +166,7 @@ document.getElementById("save-btn").addEventListener("click", async function(){
   const { error } = await supabaseClient
     .from("Shubh Vichar")
     .insert([
-      { content: content }
+      { Content: content }
     ]);
 
   if(error){
