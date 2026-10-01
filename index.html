@@ -97,6 +97,38 @@ async function loadProperties() {
   }
 
   console.log("Properties:", data);
+    const grid = document.getElementById("properties-grid");
+
+  if (data && data.length > 0) {
+    grid.innerHTML = "";
+
+    data.forEach(property => {
+      grid.innerHTML += `
+        <article class="property">
+          <div class="photo" style="background-image:url('${property["Image URL"] || ""}')">
+            <span class="tag">${property["Property type"] || "Property"}</span>
+          </div>
+
+          <div class="property-body">
+            <h3>${property["Title"] || "Untitled Property"}</h3>
+
+            <div class="location">${property["Location"] || ""}</div>
+
+            <div class="details">
+              <span>${property["Bedrooms"] || 0} Beds</span>
+              <span>${property["Bathrooms"] || 0} Baths</span>
+              <span>${property["Area"] || ""}</span>
+            </div>
+
+            <div class="price">
+              <strong>${property["Price"] || "₹ On Request"}</strong>
+              <a href="https://wa.me/919415952120?text=Hello%20Santosh%20Kumar%20Maurya%2C%20I%20am%20interested%20in%20the%20property%20${encodeURIComponent(property["Title"] || "")}.">ENQUIRE →</a>
+            </div>
+          </div>
+        </article>
+      `;
+    });
+  }
 }
 
 loadProperties();
