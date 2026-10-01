@@ -317,14 +317,14 @@ function animateTagline(html) {
       char.style.animationDelay = `${index * 0.025}s`;
     });
 
-  }, 6000);
+  }, 5000);
 
   setTimeout(() => {
 
     taglineIndex = (taglineIndex + 1) % taglines.length;
     animateTagline(taglines[taglineIndex]);
 
-  }, 6900);
+  }, 5900);
 }
 
 animateTagline(taglines[0]);
