@@ -379,7 +379,37 @@ if (!error && data) {
     list.appendChild(item);
   });
 }
+document.addEventListener("click", function(event) {
 
+  if (event.target.classList.contains("edit-property-btn")) {
+
+    const propertyId = event.target.dataset.id;
+
+    const property = window.propertiesData.find(
+      item => String(item.id) === String(propertyId)
+    );
+
+    if (!property) return;
+
+    document.getElementById("property-title").value = property["Title"] || "";
+    document.getElementById("property-type").value = property["Property type"] || "";
+    document.getElementById("property-price").value = property["Price"] || "";
+    document.getElementById("property-location").value = property["Location"] || "";
+    document.getElementById("property-bedrooms").value = property["Bedrooms"] || "";
+    document.getElementById("property-bathrooms").value = property["Bathrooms"] || "";
+    document.getElementById("property-area").value = property["Area"] || "";
+    document.getElementById("property-description").value = property["Description"] || "";
+    document.getElementById("property-facilities").value = property["Facilities"] || "";
+    document.getElementById("property-road").value = property["Distance from main road"] || "";
+    document.getElementById("property-image").value = property["Image URL"] || "";
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+});
 loadManageProperties();  
 </script>
 </body>
