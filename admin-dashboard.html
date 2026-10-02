@@ -372,7 +372,7 @@ if (!error && data) {
       <h3>${property["Title"] || "Untitled Property"}</h3>
       <p>${property["Location"] || ""}</p>
       <p>${property["Price"] || ""}</p>
-      <button type="button">EDIT</button>
+      <button type="button" class="edit-property-btn" data-id="${property["id"]}">EDIT</button>
       <button type="button">DELETE</button>
     `;
 
