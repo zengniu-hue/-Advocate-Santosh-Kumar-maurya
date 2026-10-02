@@ -400,7 +400,8 @@ window.propertiesData = data;
   });
 }
 document.addEventListener("click", async function(event) {
-  if (event.target.classList.contains("delete-property-btn")) {
+  if (event.target.classList.contains("edit-property-btn")) {
+  event.preventDefault();
 
   const propertyId = event.target.dataset.id;
 
