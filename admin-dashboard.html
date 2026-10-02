@@ -393,7 +393,7 @@ window.propertiesData = data;
       <p>${property["Location"] || ""}</p>
       <p>${property["Price"] || ""}</p>
       <button type="button" class="edit-property-btn" data-id="${property["id"]}">EDIT</button>
-      <button type="button">DELETE</button>
+      <button type="button" class="delete-property-btn" data-id="${property["id"]}">DELETE</button>
     `;
 
     list.appendChild(item);
