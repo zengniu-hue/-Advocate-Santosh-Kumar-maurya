@@ -336,6 +336,51 @@ if (!error && data) {
   propertyMessage.textContent = "Property added successfully!";
 
 });
+  async function loadManageProperties() {
+
+  const { data, error } = await supabaseClient
+    .from("Properties")
+    .select("*")
+    .order("id", { ascending: false });
+
+  if (error) {
+    console.error(error);
+    document.getElementById("properties-list").textContent =
+      "Error loading properties: " + error.message;
+    return;
+  }
+
+  const list = document.getElementById("properties-list");
+
+  if (!data || data.length === 0) {
+    list.textContent = "No properties added yet.";
+    return;
+  }
+
+  list.innerHTML = "";
+
+  data.forEach(property => {
+
+    const item = document.createElement("div");
+
+    item.style.padding = "18px";
+    item.style.marginBottom = "15px";
+    item.style.border = "1px solid #ddd";
+    item.style.borderRadius = "6px";
+
+    item.innerHTML = `
+      <h3>${property["Title"] || "Untitled Property"}</h3>
+      <p>${property["Location"] || ""}</p>
+      <p>${property["Price"] || ""}</p>
+      <button type="button">EDIT</button>
+      <button type="button">DELETE</button>
+    `;
+
+    list.appendChild(item);
+  });
+}
+
+loadManageProperties();  
 </script>
 </body>
   
