@@ -291,9 +291,43 @@ if (!error && data) {
   document.getElementById("shubh-vichar").value = "";
 
 });
+   <script>
   </script>
-  
+ document.getElementById("add-property-btn").addEventListener("click", async function(){
+
+  const property = {
+    Title: document.getElementById("property-title").value.trim(),
+    "Property type": document.getElementById("property-type").value.trim(),
+    Price: document.getElementById("property-price").value.trim(),
+    Location: document.getElementById("property-location").value.trim(),
+    Bedrooms: document.getElementById("property-bedrooms").value,
+    Bathrooms: document.getElementById("property-bathrooms").value,
+    Area: document.getElementById("property-area").value.trim(),
+    Description: document.getElementById("property-description").value.trim(),
+    Facilities: document.getElementById("property-facilities").value.trim(),
+    "Distance from main road": document.getElementById("property-road").value.trim(),
+    "Image URL": document.getElementById("property-image").value.trim()
+  };
+
+  const propertyMessage = document.getElementById("property-message");
+
+  propertyMessage.textContent = "Saving property...";
+
+  const { error } = await supabaseClient
+    .from("Properties")
+    .insert([property]);
+
+  if(error){
+    console.error(error);
+    propertyMessage.textContent = "Error: " + error.message;
+    return;
+  }
+
+  propertyMessage.textContent = "Property added successfully!";
+
+});
 
 </body>
+  
 </html>
   
