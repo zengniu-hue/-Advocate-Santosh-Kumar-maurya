@@ -405,6 +405,7 @@ document.addEventListener("click", function(event) {
 
     const propertyId = event.target.dataset.id;
     editingPropertyId = propertyId;
+    document.getElementById("add-property-btn").textContent = "UPDATE PROPERTY";
 
     const property = window.propertiesData.find(
       item => String(item.id) === String(propertyId)
