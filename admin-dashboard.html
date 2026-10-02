@@ -323,9 +323,29 @@ if (!error && data) {
 
   propertyMessage.textContent = "Saving property...";
 
+  if (editingPropertyId) {
+
   const { error } = await supabaseClient
     .from("Properties")
-    .insert([property]);
+    .update(property)
+    .eq("id", editingPropertyId);
+
+  if (error) {
+    console.error(error);
+    propertyMessage.textContent = "Error: " + error.message;
+    return;
+  }
+
+  propertyMessage.textContent = "Property updated successfully!";
+  editingPropertyId = null;
+  loadManageProperties();
+  return;
+
+}
+
+const { error } = await supabaseClient
+  .from("Properties")
+  .insert([property]);
 
   if(error){
     console.error(error);
