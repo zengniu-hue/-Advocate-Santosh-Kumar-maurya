@@ -344,10 +344,20 @@ if (!error && data) {
   return;
 
 }
-
 const { error } = await supabaseClient
   .from("Properties")
-  .insert([property]);
+  .insert([{
+    Title: property.Title,
+    "Property type": property["Property type"],
+    Price: property.Price,
+    Location: property.Location,
+    Bedrooms: property.Bedrooms,
+    Bathrooms: property.Bathrooms,
+    Area: property.Area,
+    Facilities: property.Facilities,
+    "Distance from main road": property["Distance from main road"],
+    "Image URL": property["Image URL"]
+  }]);
 
   if(error){
     console.error(error);
