@@ -446,6 +446,7 @@ document.addEventListener("click", async function(event) {
     const property = window.propertiesData.find(
       item => String(item.id) === String(propertyId)
     );
+    console.log("EDIT PROPERTY:", property);
 
     if (!property) return;
 
