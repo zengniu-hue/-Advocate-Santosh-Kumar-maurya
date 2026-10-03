@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -303,7 +304,8 @@ if (!error && data) {
 
 });
    let editingPropertyId = null;
- document.getElementById("add-property-btn").addEventListener("click", async function(){
+ document.getElementById("add-property-btn").addEventListener("click", async function(event){
+  event.preventDefault();
 
   const property = {
     Title: document.getElementById("property-title").value.trim(),
