@@ -308,6 +308,7 @@ if (!error && data) {
   event.preventDefault();
    alert("UPDATE BUTTON CLICKED");
    alert("Editing ID: " + editingPropertyId);
+   alert("Image section reached");
 const imageFile = document.getElementById("property-image-file").files[0];
 
 let imageUrl = "";
@@ -338,7 +339,7 @@ if (imageFile) {
   imageUrl = publicUrlData.publicUrl;
 
 }
-   alert("Image section reached");
+   alert("Property object starting...");
   const property = {
     Title: document.getElementById("property-title").value.trim(),
     "Property type": document.getElementById("property-type").value.trim(),
