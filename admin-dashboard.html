@@ -315,7 +315,7 @@ let imageUrl = "";
 alert("Image selected: " + (imageFile ? imageFile.name : "NO IMAGE"));
 if (imageFile) {
   const fileName = Date.now() + "-" + imageFile.name;
-
+alert("Starting image upload...");
   const { error: uploadError } = await supabaseClient
     .storage
     .from("Property- images")
