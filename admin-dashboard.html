@@ -385,6 +385,7 @@ if (imageFile) {
   return;
 
 }
+   alert("Sending UPDATE to Supabase...");
 const { error } = await supabaseClient
   .from("Properties")
   .insert([{
