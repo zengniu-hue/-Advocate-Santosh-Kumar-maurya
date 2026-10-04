@@ -359,7 +359,18 @@ if (imageFile) {
 
   const { error } = await supabaseClient
     .from("Properties")
-    .update(property)
+    .update({
+  Title: property.Title,
+  "Property type": property["Property type"],
+  Price: property.Price,
+  Location: property.Location,
+  Bedrooms: property.Bedrooms,
+  Bathrooms: property.Bathrooms,
+  Area: property.Area,
+  Facilities: property.Facilities,
+  "Distance from main road": property["Distance from main road"],
+  "Image URL": property["Image URL"]
+})
     .eq("id", editingPropertyId);
 
   if (error) {
