@@ -306,7 +306,35 @@ if (!error && data) {
    let editingPropertyId = null;
  document.getElementById("add-property-btn").addEventListener("click", async function(event){
   event.preventDefault();
+const imageFile = document.getElementById("property-image-file").files[0];
 
+let imageUrl = "";
+
+if (imageFile) {
+  const fileName = Date.now() + "-" + imageFile.name;
+
+  const { error: uploadError } = await supabaseClient
+    .storage
+    .from("Property- images")
+    .upload(fileName, imageFile, {
+      contentType: imageFile.type,
+      upsert: false
+    });
+
+  if (uploadError) {
+    console.error(uploadError);
+    document.getElementById("property-message").textContent =
+      "Image upload failed: " + uploadError.message;
+    return;
+  }
+
+  const { data: publicUrlData } = supabaseClient
+    .storage
+    .from("Property- images")
+    .getPublicUrl(fileName);
+
+  imageUrl = publicUrlData.publicUrl;
+}
   const property = {
     Title: document.getElementById("property-title").value.trim(),
     "Property type": document.getElementById("property-type").value.trim(),
@@ -318,7 +346,7 @@ if (!error && data) {
     Description: document.getElementById("property-description").value.trim(),
     Facilities: document.getElementById("property-facilities").value.trim(),
     "Distance from main road": document.getElementById("property-road").value.trim(),
-    "Image URL": document.getElementById("property-image").value.trim()
+    "Image URL": imageUrl
   };
 
   const propertyMessage = document.getElementById("property-message");
