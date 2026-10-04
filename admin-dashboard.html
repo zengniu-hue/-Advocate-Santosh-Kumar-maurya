@@ -312,7 +312,7 @@ if (!error && data) {
 const imageFile = document.getElementById("property-image-file").files[0];
 
 let imageUrl = "";
-
+alert("Image selected: " + (imageFile ? imageFile.name : "NO IMAGE"));
 if (imageFile) {
   const fileName = Date.now() + "-" + imageFile.name;
 
